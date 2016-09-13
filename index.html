@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Synth JS</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/styles.css" rel="stylesheet" media="all">
+    <link href="css/rangeslider.css" rel="stylesheet" media="all">
+
+    <!-- Script for html5 in older browsers -->
+    
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->    
+
+</head>
+<body>
+
+<header id='header'><h3>Synth JS</h3></header>
+<div id="wrap"> <!-- container for website -->
+    
+    <div id="synth">
+    
+    <p><br />
+    <input type ="button" id="trigger" value = "trigger">TestSynth</input>
+    </p>
+
+    </div>
+
+</div>
+
+<!-- uncomment lines below to include extra p5 or javascript libraries -->
+
+<!-- 
+<script language="javascript" type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+<script language="javascript" type="text/javascript" src="js/rangeslider.min.js"></script> 
+-->
+
+<script language="javascript" type="text/javascript" src="js/synth.js"></script>
+
+<script language="javascript">
+
+    window.onload = function () {
+
+        Synth.init();
+
+        var tone = new Sound();
+        var trigger = document.getElementById("trigger");
+
+        trigger.onmousedown = function () {tone.play(440)};
+        trigger.onmouseup = function () {tone.stop()};
+
+    }
+
+</script>
+
+</body>
+</html>
